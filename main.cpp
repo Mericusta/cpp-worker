@@ -2,6 +2,10 @@
 #include <sstream>
 #include <string>
 #include <regex>
+#include <set>
+
+// #include "utility.h"
+// #include "global.h"
 
 void Regex();
 void Usage();
@@ -9,7 +13,13 @@ void Usage();
 int main(int argc, char const *argv[])
 {
     // Regex();
-    Usage();
+    // Usage();
+
+    // int index = 10;
+    // int value = 5;
+    // std::stringstream outputContentValueStringStream;
+    // outputContentValueStringStream << index << " " << value;
+    // utility::FormatOutput(global::LogMarkTest, "Current index = %v, and value = %v", outputContentValueStringStream);
 
     return 0;
 }
