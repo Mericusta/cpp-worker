@@ -1,11 +1,11 @@
 #include <regex>
 #include <iostream>
 #include "utility.h"
-#include "global/global.h"
+#include "global.h"
 
-void FormatOutput(std::string logMark, std::string format, std::stringstream & contentStringStream)
+void utility::FormatOutput(std::string logMark, std::string format, std::stringstream & contentStringStream)
 {
-    std::string content;
+    std::string content = logMark;
     while (contentStringStream >> content)
     {
         format = std::regex_replace(format, global::replaceRegex, content, std::regex_constants::format_first_only);
@@ -14,46 +14,46 @@ void FormatOutput(std::string logMark, std::string format, std::stringstream & c
     std::cout << format << std::endl;
 }
 
-void TestOutput(std::string format, std::stringstream content)
+void utility::TestOutput(std::string format, std::stringstream & contentStringStream)
 {
-
+    utility::FormatOutput(global::LogMarkTest, format, contentStringStream);
 }
 
-bool IsExist(std::string path)
+bool utility::IsExist(std::string path)
 {
-
+    return false;
 }
 
-std::exception CreateDir(std::string directoryPath)
+error::Error* utility::CreateDir(std::string directoryPath)
 {
-
+    return nullptr;
 }
 
-std::exception CreateFile(std::string filePath)
+error::Error* utility::CreateFile(std::string filePath)
 {
-
+    return nullptr;
 }
 
-template <typename T, template <typename T, typename ALLOC = std::allocator<T>> class CONT>
-std::set<T> utility::ExtraSetFromList<T, CONT>::operator () (const CONT<T> & list)
+// template <typename T, template <typename TT, typename ALLOC = std::allocator<TT>> class CONT>
+// std::set<T> utility::ExtraSetFromListFunction(const CONT<T> & list)
+// {
+//     std::set<T> newSet;
+//     for (auto value : list)
+//     {
+//         if (newSet.find(value) == newSet.end())
+//         {
+//             newSet.emplace(value);
+//         }
+//     }
+//     return newSet;
+// }
+
+std::string utility::SlicePop(std::string otherStyleString, bool capitalize)
 {
-    std::set<T> newSet;
-    for (auto value : list)
-    {
-        if (newSet.find(value) == newSet.end())
-        {
-            newSet.emplace(value);
-        }
-    }
-    return newSet;
+    return "";
 }
 
-std::string SlicePop(std::string otherStyleString, bool capitalize)
+std::string utility::ConvertTemplate2Format(std::string templateString)
 {
-
-}
-
-std::string ConvertTemplate2Format(std::string templateString)
-{
-
+    return "";
 }
